@@ -1,0 +1,99 @@
+import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+public class Testing {
+   
+   public static void main (String [] args){
+    
+for (int datasize = 297; datasize < 2976; datasize +=297 ){
+
+   Random rand = new Random();
+   int s_val = rand.nextInt(2976-datasize);
+   
+  // System.out.println(s_val);
+   String [] dataset = new String [datasize];
+   BinaryTree bst = new BinaryTree();
+   avltree avl = new avltree();
+   
+   File file = new File ("loadshedding.txt");
+    int i = 0;
+   int  counter = 1;
+   String line;
+   
+try {
+   Scanner tfile = new Scanner (file);
+  
+   
+   while (tfile.hasNext()){
+      line = tfile.nextLine();   
+      if ((counter >= s_val)&&(counter < s_val + datasize)){
+         
+         dataset[i] = line;
+         bst.addNode(line);
+         avl.addavlNode(line);
+         i++;
+         counter++;
+      }
+      else counter++;
+   }
+   
+   tfile.close();
+  }
+catch  (FileNotFoundException e) { System.out.println ("File not found");}
+String stage, dom, time;
+System.out.println("Data set size: "+ datasize);
+for (i = 0; i < datasize; i++){
+   line = dataset[i];
+   int us = line.indexOf("_");
+         stage = line.subString(0,us);
+         line = line.substring(us+1);
+         us = line.indexOf("_");
+         DOM = line.substring(0,us);
+         line = line.substring(us+1); 
+         us = line.indexOf(" ");
+         time = line.substring(0,us);
+         
+	 System.out.println("Key: "+ stage+"_"+DOM+"_"+time);
+         bst.printAreas(stage, DOM,time);
+	 avl.printAreas(stage, DOM, time);
+}
+
+   
+
+}
+
+   
+   
+   /*Other stuff
+   
+   
+   String f = "loadshedding.txt";
+   File filee = new File (f);
+   
+   try {
+      Scanner t_file = new Scanner (filee);
+      int counter = 0;
+      
+      while (tfile.hasNext()){
+         String line = t_file.nextLine();
+         int us = line.indexOf("_");
+         stage = line.substring(0,us); //stage
+         line = line.substring(us+1);
+         us = line.indexOf("_");
+         DOM = line.substring(0,us); //dom
+         line = line.substring(us+1); 
+         us = line.indexOf(" ");
+         time = line.substring(0,us); //time
+         
+         //findNode(1_1_00)
+    }
+   
+   tfile.close();
+   }
+
+catch  (FileNotFoundException e) { System.out.println ("File not found");} */
+   
+   
+
+   }
+}

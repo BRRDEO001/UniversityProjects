@@ -1,0 +1,9 @@
+Output 1 (Testing values:1 1 00)
+1
+Insert operation counter value: 540200
+Search operation counter value: 1
+
+Output 2 (Testing values:5 4 20)
+11, 3, 7, 15, 16
+Insert operation counter value: 540200
+Search operation counter value: 282
