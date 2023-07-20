@@ -1,0 +1,11 @@
+commit e666298048573afdd09c710b5b4ba9542b5dc1dd (HEAD -> master)
+Author: BRRDEO001 <deonyb23@gmail.com>
+Date:   Sun Aug 23 15:20:02 2020 +0200
+
+    Added Makefile
+
+commit befe9ca5de34a4ae0f6c62a515898a6b1c5bfc54
+Author: BRRDEO001 <deonyb23@gmail.com>
+Date:   Sun Aug 23 15:19:30 2020 +0200
+
+    Added all .java files
